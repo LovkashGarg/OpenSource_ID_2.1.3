@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 // const collection="Auctionlist";
 // require('dotenv').config();
 const AuctionSchema = new mongoose.Schema({
-  Auctionname: { type: String },
+    Auctionname: {type: String },
   Itemname: { type: String,},
-  Email:{type:Number},
+  Email:{type:String},
   accountno: String,
   Startprice: {type:Number},
-  IncrementperBid:{type:Number}
+  IncrementperBid:{type:Number},
 });
 
 const model=mongoose.model('auctionlist',AuctionSchema); // used to make a collection

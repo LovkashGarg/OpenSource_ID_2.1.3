@@ -50,6 +50,15 @@ const Bidroom = () => {
             setparticipatebidder(true);
         }
     }
+
+
+    useEffect(()=>{
+        socket.on("receive_updated_timer", (data) =>{
+setseconds(30);
+console.log(data);
+        },[socket])
+    })
+    
     const notify = () => toast("Wow so easy!");
     const dobid = async () => {
         if (participatebidder) {
@@ -57,10 +66,10 @@ const Bidroom = () => {
             sethistoryofbid(historyofbid);
             setcurrPrice(currPrice);
             socket.emit("bid_done", currPrice);
-            socket.emit("timer_update",seconds);
             console.log(historyofbid);
+            // notify();
+            await socket.emit("send_updated_timer",30);
             bidmadeunder30sec();
-            notify();
             await socket.emit("send_updated_bid", { username, currPrice, room });
         }
     }
