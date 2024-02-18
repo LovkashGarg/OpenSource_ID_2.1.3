@@ -6,25 +6,27 @@ import Bidroomhistory from './components/bidroomhistory';
 import Livebidcarousel from './components/livebidcarousel';
 import Bidroom from './components/bidroom';
 import Createauction from './components/createauction';
+import Home from './components/Home';
 function App() {
   return (
     <div className="App">
-        {/* {Auctionlist.map((e)=>(
+      {/* {Auctionlist.map((e)=>(
           <>
         <p>{e.Auctionname}</p>
         <p>{e.Itemname}</p>
         </>
     ))} */}
- <Livebidcarousel/>
- <div className='flex justify-center'>
- <img src={ima} alt=""  className='w-[400px] h-[400px] self-center'/>   
- <div className='flex self-start items-center justify-center my-[50px]'><Bidroom/></div>
- <div className='flex items-center justify-center '><Bidroomhistory/></div>
- </div>/
-<div className='flex justify-center items-center'><Createauction/></div>
- {/* <Loginpage/> */}
- {/* <Registerpage/> */}
- </div>
+
+      {/* <Loginpage/> */}
+      {/* <Registerpage/> */}
+      <Home />
+            <div className='flex justify-center'>
+        <img src={ima} alt="" className='w-[400px] h-[400px] self-center' />
+        <div className='flex self-start items-center justify-center my-[50px]'><Bidroom /></div>
+        <div className='flex items-center justify-center '><Bidroomhistory /></div>
+      </div>
+      {/* <div className='flex justify-center items-center'><Createauction /></div> */}
+    </div>
   );
 }
 

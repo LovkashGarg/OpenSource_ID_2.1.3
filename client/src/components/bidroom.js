@@ -10,7 +10,7 @@ const Bidroom = () => {
     const [room, setRoom] = useState("");
     let [historyofbid, sethistoryofbid] = useState([]);
     const [participatebidder, setparticipatebidder] = useState(false)
-   const [seconds,setseconds]=useState(30);
+   const [seconds,setseconds]=useState(60);
 
    var timer;
    useEffect(()=>{
@@ -18,18 +18,17 @@ const Bidroom = () => {
         setseconds(seconds-1);
     },1000);
     if(seconds==0){
-        // const soldto=historyofbid[historyofbid.length-1].username;
-        // if(!soldto){
-        //     setseconds(30);
-        // }
-        // else{
-            // console.log("sold to " +soldto);
+        const soldto=historyofbid[historyofbid.length-1].username;
+        if(!soldto){
+            setseconds(60);
+        }
+        else{
+            console.log("sold to " +soldto);
             setparticipatebidder(false);
            clearInterval(timer);
-        //    socket.emit("winner",username);
-        // }
-        
-        // setseconds(30);
+           socket.emit("winner",username);
+        }
+        setseconds(60);
     }
     return () => clearInterval(timer);
    });

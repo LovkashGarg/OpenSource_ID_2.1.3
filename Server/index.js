@@ -55,6 +55,7 @@ app.get("/",async (req,resp)=>{
     const allauctions=await model.find({})
     resp.send(allauctions);
 })
+
 app.post("/", async(req,res)=>{
     try{
         const data=new model(req.body);

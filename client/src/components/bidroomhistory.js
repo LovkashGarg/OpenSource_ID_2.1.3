@@ -14,21 +14,6 @@ const Bidroomhistory  = () => {
   return (
     <div className='History Container flex-col justify-center items-center w-[450px] h-[600px] border-black border-[3px] rounded-[20px] no-scrollbar overflow-y-scroll'>
      <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
-     <Bidroomhistorycard/>
     </div>
   )
 }
