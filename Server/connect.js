@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const collection="Auctionlist";
+// const collection="Auctionlist";
 // require('dotenv').config();
 const Schema = new mongoose.Schema({
   AuctionName: { type: String },
