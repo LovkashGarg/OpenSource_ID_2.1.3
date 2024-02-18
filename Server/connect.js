@@ -1,20 +1,26 @@
 const mongoose = require('mongoose');
 // const collection="Auctionlist";
 // require('dotenv').config();
-const Schema = new mongoose.Schema({
-  AuctionName: { type: String },
-  Email: { type: String,required:true},
-  AuctionStartP:{type:Number,required:true},
-  accountNumber: String,
-  Incrementperbid: {type:Number,required:true},
-  auctionTimings:{type:Date,required:true}
+const AuctionSchema = new mongoose.Schema({
+  Auctionname: { type: String },
+  Itemname: { type: String,},
+  Email:{type:Number},
+  accountno: String,
+  Startprice: {type:Number},
+  IncrementperBid:{type:Number}
 });
 
-const model=mongoose.model('users',Schema);
+const model=mongoose.model('auctionlist',AuctionSchema); // used to make a collection
 
 async function connect()
-{      await mongoose.connect(`mongodb://localhost:27017/collection`);
-  console.log('mongo db conneced Connected!');
+{      
+await mongoose.connect(`mongodb://localhost:27017/Auctionlist`)
+.then(()=>{
+    console.log('mongodb Connected!');
+})
+.catch(()=>{
+    console.log('failed');
+})
 }
 
 module.exports={model,connect};
