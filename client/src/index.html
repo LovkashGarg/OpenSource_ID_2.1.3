@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lOG-IN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0px;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            align-items: center;
+            justify-content: center;
+            background: url('https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-position: center;
+            background-size: cover;
+            background-color: grey;
+        }
+
+        .login {
+            max-height: 464px;
+            max-width: 360px;
+            overflow: hidden;
+            padding-top: 40px;
+            border: 2px solid black;
+            padding-bottom: 40px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            /* height: 60vh; */
+            width: 30vw;
+            border-radius: 10px;
+            backdrop-filter: blur(1px);
+            animation-name: blurring;
+            animation: blurring 2s infinite alternate;
+        }
+
+        @keyframes blurring {
+            from {
+                backdrop-filter: blur(0px);
+            }
+
+            to {
+                backdrop-filter: blur(10px);
+            }
+        }
+
+        input {
+            padding: 10px;
+            width: 60%;
+            /* box-shadow: 0 0 30px rgba(0, 128, 255, 0.7); */
+        }
+
+        button {
+            width: 50%;
+            padding: 10px;
+            border-radius: 30px;
+            border: 0px;
+        }
+
+        .submit {
+            background-color: rgb(221, 44, 44);
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(13, 19, 23);
+            left: 0px;
+            /* display: block; */
+            position: relative;
+            right: 100px;
+        }
+
+        .facebook {
+            background-color: rgb(19, 77, 224);
+            color: white;
+        }
+
+        .google {
+            background-color: rgb(255, 255, 255);
+        }
+
+        p {
+            align-items: center;
+            width: 70%;
+            text-align: center;
+            padding: 4px;
+        }
+
+        @media(max-width:1150px) {
+            input {
+                height: 5px;
+                font-size: 12px;
+            }
+
+            .login {
+                padding: 0px;
+                height: 58vh;
+                gap: 5px;
+                width: 369px;
+                font-size: 15px;
+            }
+
+            h5 {
+                font-size: 16px;
+            }
+
+            a {
+                font-size: 14px;
+            }
+
+            .container>* {
+                padding: 4px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            button {
+                height: 30px;
+                font-size: 12px;
+                padding: 0px;
+            }
+        }
+
+        @media(max-width:800px) {
+            input {
+                height: 5px;
+                font-size: 12px;
+            }
+
+            .login {
+                padding: 0px;
+                height: 58vh;
+                gap: 5px;
+                width: 336px;
+                font-size: 16px;
+            }
+
+            h5 {
+                font-size: 16px;
+            }
+
+            a {
+                font-size: 14px;
+            }
+
+            .container>* {
+                padding: 4px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            button {
+                height: 30px;
+                font-size: 12px;
+                padding: 0px;
+            }
+        }
+
+        @media(max-width:400px) {
+            input {
+                height: 5px;
+                font-size: 10px;
+            }
+
+            .login {
+                padding: 0px;
+                height: 50vh;
+                gap: 5px;
+
+            }
+
+            h5 {
+                font-size: 11px;
+            }
+
+            a {
+                font-size: 10px;
+            }
+
+            .container>* {
+                padding: 4px;
+            }
+
+            .login {
+                width: 75%;
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            button {
+                height: 20px;
+                font-size: 10px;
+                padding: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login">
+            <h2>Welcome</h2>
+            <input type="email" name="Email" placeholder="email" id="Email" />
+            <input type="password" name="password" placeholder="password" id="password" />
+
+            <a href="">forgot password</a>
+            <a href="/register">Don't have any account? create one.</a>
+
+            <button class="submit">Log in</button>
+            <h5>OR</h5>
+            <button class="facebook">continue with facebook</button>
+            <button class="google">continue with Google</button>
+            <p>
+                By continuing, you agree to Pinterest's <br />
+                <strong>Terms of Service</strong>; Opens a new tab and acknowledge
+                you've read our <br />
+                <strong>Privacy Policy; Opens a new tab. Notice at collection;</strong>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let bShadow = document.getElementById("Email");
+        let pShadow = document.getElementById("password");
+        color(bShadow);
+        color(pShadow);
+
+        function color(temp) {
+            temp.addEventListener("mouseover", randomShadow);
+            temp.addEventListener("mouseout", stopRandomShadow);
+            let interval;
+
+            function randomShadow() {
+                interval = setInterval(() => {
+                    temp.style.boxShadow = boxColor();
+                    temp.style.transition = "all 3s";
+                }, 1000);
+            }
+
+            function stopRandomShadow() {
+                clearInterval(interval);
+                temp.style.boxShadow = "0 0 0 rgb(255, 255, 255)";
+            }
+
+            function boxColor() {
+                var x = Math.floor(Math.random() * 256);
+                var y = Math.floor(Math.random() * 256);
+                var z = Math.floor(Math.random() * 256);
+                return ` 0 0 10px rgba(${x},${y},${z},1.2)`;
+            }
+        }
+    </script>
+</body>
+
+</html>

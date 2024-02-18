@@ -7,7 +7,7 @@ const Livebidcard = () => {
   return (
     <div className='w-[350px]'>
 
-    <div className='livebidcard flex flex-col  h-[250px] mb-[50px] mx-[30px]  rounded-[30px] border-[3px] border-green-300 '>
+    <div className='livebidcard flex flex-col  h-[250px] mb-[30px] mx-[30px]  rounded-[30px] border-[3px] border-green-300 '>
         <div className='flex justify-between'>
 <div className='left px-[20px]'>StartP :[₹{sp}]</div>
 <div className='right px-[20px]'>CurrP :[₹{cp}]</div>

@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0px;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-position: center;
+    background-size: cover;
+    background-color: grey;
+}
+
+.login {
+    max-height: 464px;
+    max-width: 360px;
+    overflow: hidden;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 30vw;
+    border: 2px solid black;
+    backdrop-filter: blur(1px);
+    border-radius: 10px;
+    animation-name: blurring;
+    animation: blurring 2s infinite alternate;
+}
+
+input {
+    padding: 10px;
+    width: 60%;
+    border-radius: 10px;
+    /* box-shadow: 0 0 30px rgba(0, 128, 255, 0.7); */
+}
+
+button {
+    width: 50%;
+    padding: 10px;
+    border-radius: 30px;
+    border: 0px;
+}
+
+.submit {
+    background-color: rgb(221, 44, 44);
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(13, 19, 23);
+    left: 0px;
+    /* display: block; */
+    position: relative;
+    right: 100px;
+}
+
+.facebook {
+    background-color: rgb(19, 77, 224);
+    color: white;
+}
+
+.google {
+    background-color: rgb(255, 255, 255);
+}
+
+p {
+    align-items: center;
+    width: 70%;
+    text-align: center;
+    padding: 4px;
+}
+
+@media(max-width:1150px){
+    input{
+    height: 5px;
+    font-size: 12px;
+    }
+    .login{
+        padding: 0px;
+        height: 58vh;
+        gap: 5px;
+        width: 369px;
+        font-size: 15px;
+    }
+    h5{
+        font-size: 16px;
+    }
+    a{
+        font-size: 14px;
+    }
+    .container>*{
+        padding: 4px;
+    }
+    h2{
+        font-size: 22px;
+    }
+    button{
+        height: 30px;
+        font-size: 12px;
+        padding: 0px;
+    }
+}
+@media(max-width:800px){
+    input{
+    height: 5px;
+    font-size: 12px;
+    }
+    .login{
+        padding: 0px;
+        height: 58vh;
+        gap: 5px;
+        width: 336px;
+        font-size: 16px;
+    }
+    h5{
+        font-size: 16px;
+    }
+    a{
+        font-size: 14px;
+    }
+    .container>*{
+        padding: 4px;
+    }
+    h2{
+        font-size: 22px;
+    }
+    button{
+        height: 30px;
+        font-size: 12px;
+        padding: 0px;
+    }
+}
+@media(max-width:400px){
+    input{
+    height: 5px;
+    font-size: 10px;
+    }
+    .login{
+        padding: 0px;
+        height: 50vh;
+        gap: 5px;
+
+    }
+    h5{
+        font-size: 11px;
+    }
+    a{
+        font-size: 10px;
+    }
+    .container>*{
+        padding: 4px;
+    }
+    .login{
+        width: 75%;
+        font-size: 16px;
+    }
+    h2{
+        font-size: 20px;
+    }
+    button{
+        height: 20px;
+        font-size: 10px;
+        padding: 0px;
+    }
+}
+
+@keyframes blurring {
+    from{backdrop-filter: blur(0px);}
+    to {backdrop-filter: blur(10px);}
+}
