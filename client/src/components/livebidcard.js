@@ -1,5 +1,5 @@
 import React from 'react'
-
+import imagehome from './images.jpg'
 const Livebidcard = () => {
     const sp=1000;
     const cp=4000;
@@ -14,7 +14,7 @@ const Livebidcard = () => {
 </div>
 <div className='flex flex-col items-center'>
     {itemname}
-    <img  className ='w-[200px] h-[140px] rounded-[20px]' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTnhG0Bs0gpH8M6vl3oQ9fypuqmwHGOMFZEJcHnn7PRw&s" alt="" />
+    <img  className ='w-[200px] h-[140px] rounded-[20px]' src={imagehome} alt="" />
 </div>
 <div className='flex justify-evenly my-[15px]'>
     <button className='viewbids bg-blue-500 text-white h-[30px]  w-[100px]' >Viewbids</button>

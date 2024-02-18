@@ -4,7 +4,8 @@ const http=require('http');
 const {Server}=require("socket.io");
 const cors=require('cors');
 app.use(cors());
-
+const {model,connect} =require('./connect');
+connect();
 const server=http.createServer(app);
 
 // allow us to work with socket io
@@ -27,6 +28,12 @@ io.on("connection",(socket)=>{
 
         socket.join(data);
         console.log(`User with ID ${socket.id} Bid for :${data}`);
+    })
+    socket.on("timer_update",(data)=>{
+        
+    })
+    socket.on("winner",(data)=>{
+        console.log(data);
     })
 
     socket.on("send_updated_bid",(data)=>{

@@ -16,7 +16,6 @@ const livebidcarousel = () => {
       <Livebidcard/>
       <Livebidcard/>
       <Livebidcard/>
-      <Livebidcard/>
       </div>   
     </div>
     </div>

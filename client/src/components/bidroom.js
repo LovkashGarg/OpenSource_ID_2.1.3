@@ -10,7 +10,7 @@ const Bidroom = () => {
     const [room, setRoom] = useState("");
     let [historyofbid, sethistoryofbid] = useState([]);
     const [participatebidder, setparticipatebidder] = useState(false)
-   const [seconds,setseconds]=useState(10);
+   const [seconds,setseconds]=useState(30);
 
    var timer;
    useEffect(()=>{
@@ -18,16 +18,23 @@ const Bidroom = () => {
         setseconds(seconds-1);
     },1000);
     if(seconds==0){
-        const soldto=historyofbid[historyofbid.length-1].username;
-        console.log("sold to " +soldto);
-        setparticipatebidder(false);
-       clearInterval(timer);
+        // const soldto=historyofbid[historyofbid.length-1].username;
+        // if(!soldto){
+        //     setseconds(30);
+        // }
+        // else{
+            // console.log("sold to " +soldto);
+            setparticipatebidder(false);
+           clearInterval(timer);
+        //    socket.emit("winner",username);
+        // }
+        
         // setseconds(30);
     }
     return () => clearInterval(timer);
    });
    const bidmadeunder30sec=()=>{
-    setseconds(10);
+    setseconds(30);
    }
 
     const Leavebid = () => {
@@ -50,6 +57,7 @@ const Bidroom = () => {
             sethistoryofbid(historyofbid);
             setcurrPrice(currPrice);
             socket.emit("bid_done", currPrice);
+            socket.emit("timer_update",seconds);
             console.log(historyofbid);
             bidmadeunder30sec();
             notify();
